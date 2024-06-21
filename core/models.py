@@ -4,6 +4,7 @@ from datetime import datetime, date
 # Create your models here.
 
 class Carrera(models.Model):
+    
     #atributos de la clase
     nombre_Carrera = models.CharField(verbose_name= "Nombre de la carrera", max_length = 50)
     titulo_Carrera = models.CharField(verbose_name= "titulo de la carrera", max_length = 50)
