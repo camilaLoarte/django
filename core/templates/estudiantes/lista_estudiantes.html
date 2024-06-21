@@ -1,0 +1,43 @@
+{% extends "comun/base.html" %}
+
+
+
+{% block  content %}
+<h1 class = "box"> Lista de Estudiantes</h1>
+<div class="container box">
+
+  <div>
+    <a href= "/core/crear_estudiante" class="button is-primary mb-3">Crear Estudiante</a>
+  </div>
+
+  <table class="table">
+      <thead>
+        <tr class = "is-selected has background-primary-light">
+          <th>Num.</th>
+          <th>Apellidos</th>
+          <th>Nombres</th>
+          <th>Cedula</th>
+          <th>Correo</th>
+          <th>acciones</th>
+        </tr>
+      </thead>
+    <tbody>
+      {% for estudiante in lista_estudiantes %}
+        <tr>
+          <th>1</th>
+          <td>{{ estudiante.apellidos }}</td>
+          <td>{{ estudiante.nombre }}</td>
+          <td>{{ estudiante.cedula_ruc }}</td>
+          <td>{{ estudiante.correo }}</td>
+          <td>
+              <a href= "/core/actualizar_estudiante/{{ estudiante.id }}" class="button is-info">Editar</a>
+              <a href= "/core/eliminar_estudiante/{{ estudiante.id }}" class="button is-danger">Eliminar</a>
+              
+          <td></td>
+        </tr> 
+      {% endfor %}
+    </tbody> 
+  </table>
+</div>
+
+{% endblock %} 
